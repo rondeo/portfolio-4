@@ -1,0 +1,64 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+outline: none;
+}
+body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; }
+body {font-family: 'Noto Sans KR', sans-serif;position:fixed; top:0; left:0; width: 100%; height:100%;background: #222;}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; }
+
+input { outline: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+$point:#FED205;
+/*page */
+.wrap {overflow-y:scroll;height:100vh;position: relative;}
+#header {position: fixed; top:0; left:0; width: 100%; z-index:10;
+    .inside {max-width:1200px; margin:0 auto; position: relative;}
+    h1.logo {position: absolute; top:15px; left:0; color: #fff; font-size: 30px;font-weight: bold;
+        a {color: #fff;}
+    }
+    ul {position: absolute; right:0; top:20px;
+        li {display: inline-block; font-size: 14px; margin-left: 15px;
+            a {color: #fff;
+                &:hover {text-decoration: none; color: $point;}
+            }
+        }
+    }
+}
+.page {height:100vh;
+    .inside {position: relative; z-index:2; height:100%; max-width:1200px; margin:0 auto;}
+    &.intro {background:url(../images/bg_intro.jpg); background-size:cover;
+        .text-box {position: absolute; top:50%; transform:translateY(-50%); width: 100%;}
+        .page-tit {color: #fff; font-size: 70px;font-weight: bold; margin-bottom: 50px; letter-spacing: 1px;}
+        .page-txt {color: #fff; font-size: 24px; margin-bottom: 20px;letter-spacing: 1px;}
+        &:after {content:"";position: absolute; top:0; left:0; width: 100%; height:100%; background: #000; opacity:0.6;}
+        .profile-list {
+            li {color: #fff; font-size: 18px; margin-bottom: 15px;
+                span.tit {color:#fff; position: relative;  padding-left: 10px;
+                    &:before {content:""; width: 4px; height:4px;display: inline-block; border-radius:50%; background: $point;  position: absolute; top:50%; left:0; transform:translateY(-50%);}
+                    &:after {content:":";color:#fff; display: inline-block; margin:0 5px;}
+                }
+                span.txt {}
+            }
+        }
+    }
+    
+} 
+.point {color: $point;}
+.en {font-family: 'PT Sans', sans-serif;}
