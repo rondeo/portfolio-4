@@ -41,6 +41,11 @@ $point:#FED205;
         }
     }
 }
+#nav {position: fixed; right:40px; top:50%; transform:translateY(-50%);
+    li { margin-bottom: 10px;
+        a {text-indent:-9999px; width:10px; height:10px; display: block; border-radius:50%; border: 1px solid $point;}
+    }
+}
 .page {height:100vh;
     .inside {position: relative; z-index:2; height:100%; max-width:1200px; margin:0 auto;}
     &.intro {background:url(../images/bg_intro.jpg); background-size:cover;

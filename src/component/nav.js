@@ -7,7 +7,7 @@ export default class Nav extends React.Component {
   render() {
     const {store}  = this.props;
     return (
-      <div className="nav">
+      <div id="nav">
         <ul>
             {store.menu.map((menu,i) => {
               const low = menu.toLowerCase();
