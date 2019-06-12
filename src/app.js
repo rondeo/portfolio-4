@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'mobx-react';
 import './scss/default.scss';
-import Intro from './component/intro';
 import Header from './component/header';
+import Intro from './component/intro';
+import Skill from './component/skill';
 import Store from './store/store';
 import Nav from './component/nav';
 
@@ -12,11 +13,11 @@ class App extends React.Component {
   render() {
     return (
         <Provider store={store}>
-        <div className="wrap">
-            <Header />
-            <Intro />
-            <Nav />
-        </div>
+          <div className="wrap">
+              <Header />
+              <Intro />
+              <Nav />
+          </div>
         </Provider>
         
     );

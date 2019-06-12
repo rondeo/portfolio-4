@@ -18,7 +18,6 @@ export default class Intro extends React.Component {
                   <li><span className="tit">취미</span><span className="txt">어플리케이션개발, 독서, 음악감상, 게임</span></li>
                 </ul>
               </div>
-                
             </div>
         </div>
     )

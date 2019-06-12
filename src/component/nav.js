@@ -12,7 +12,7 @@ export default class Nav extends React.Component {
             {store.menu.map((menu,i) => {
               const low = menu.toLowerCase();
               const link = "#"+low;
-              return <li key={i}><a href={link} target="_blank" rel="noopener noreferrer">{menu}</a></li>
+              return <li key={i}><a href={link}>{menu}</a></li>
             })}
         </ul>
       </div>
