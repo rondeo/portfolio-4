@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'mobx-react';
 import './scss/default.scss';
-import Header from './component/header';
-import Intro from './component/intro';
-import Skill from './component/skill';
+import Header from './page/header';
+import Intro from './page/intro';
+import Skill from './page/skill';
 import Store from './store/store';
-import Nav from './component/nav';
+import Nav from './page/nav';
 
 const store = new Store(); // 스토어 인스턴스를 만들고
 class App extends React.Component {
@@ -16,6 +16,7 @@ class App extends React.Component {
           <div className="wrap">
               <Header />
               <Intro />
+              <Skill />
               <Nav />
           </div>
         </Provider>

@@ -46,8 +46,8 @@ $point:#FED205;
         a {text-indent:-9999px; width:10px; height:10px; display: block; border-radius:50%; border: 1px solid $point;}
     }
 }
-.page {height:100vh;
-    .inside {position: relative; z-index:2; height:100%; max-width:1200px; margin:0 auto;}
+.page {min-height:100vh;
+    .inside {position: relative; z-index:2; min-height:100vh; max-width:1200px; margin:0 auto;}
     &.intro {background:url(../images/bg_intro.jpg); background-size:cover;
         .text-box {position: absolute; top:50%; transform:translateY(-50%); width: 100%;}
         .page-tit {color: #fff; font-size: 70px;font-weight: bold; margin-bottom: 50px; letter-spacing: 1px;}
@@ -61,6 +61,24 @@ $point:#FED205;
                 }
                 span.txt {}
             }
+        }
+    }
+    &.skill {
+        .skill-wrap { max-width:1200px; margin:0 auto; display: flex;
+            -webkit-box-align:center; min-height:100vh;align-items:center;
+            .inner {display: flex;  }
+            .box {background:#fff; flex:1; margin-left: 20px;  padding:25px;box-sizing: border-box; flex:1;  margin-bottom: 20px;
+                &:first-child {margin-left: 0;}
+                .tit {position: relative; text-align: center; font-size: 56px;display: block; margin-bottom: 25px; padding-bottom: 25px;
+                    &:after {content:"";position: absolute; bottom:0; width: 60px; height:2px; background: $point; left:50%; transform:translateX(-50%);}
+                }
+                p.skill-para {text-align: center; font-size: 18px; margin-bottom: 20px; line-height: 25px;}
+                li {font-size: 14px; margin-top: 10px; position: relative; padding-left: 10px; line-height: 20px;word-break:keep-all;
+                    &:first-child {margin-top: 0;}
+                    &:before {content:""; position: absolute; top:10px; left:0; width:4px; height:4px; border-radius: 50%; background: $point; display: inline-block; }
+                }
+            }
+        
         }
     }
     
