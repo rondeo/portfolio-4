@@ -2,71 +2,79 @@ import React from "react";
 import SkillBox from "../component/skill-component";
 export default class Header extends React.Component {
   render() {
-    const skillHtml = {
-      name:'html',
-      title:'HTML5',
-      skill:[
-        '웹접근성',
-        '시멘틱 마크업',
-        'JSX'
-      ],
-      list:[
-        '삼성 프로젝트 웹 접근성 검수 통과 경험',
-        'React의 JSX 문법 학습',
-        'Haml,pug,jade 기초 학습'
-      ]
-    },
-    skillCss = {
-      name:'css',
-      title:'CSS',
-      skill:[
-        'Flex',
-        'AnimateFrame',
-        'Media query'
-      ],
-      list:[
-        'CSS Media query를 이용한 반응형 경험',
-        'CSS3 Transition,Animation Frame을 이용한 Motion 경험',
-        'Flex를 이용한 레이아웃 배치 경험'
-      ]
-    },
-    skillJs = {
-      name:'js',
-      title:'JS',
-      skill:[
-        'ES6',
-        'React',
-        'Vanilla'
-      ],
-      list:[
-        'CSS Media query를 이용한 반응형 경험',
-        'CSS3 Transition,Animation Frame을 이용한 Motion 경험',
-        'Flex를 이용한 레이아웃 배치 경험'
-      ]
-    },
-    skillEtc = {
-      name:'etc',
-      title:'Etc',
-      skill:[
-        'GIT',
-        'Mac',
-        'VScode'
-      ],
-      list:[
-        'GIT - Brunch, Merge, PullRequest 경험',
-        'Mac OS, Window OS 숙달',
-        'VScode, Atom, Sublime 등 다양한 에디터 사용 경험',
-      ]
-    }
+    const skillList = [
+      {
+        name:'html',
+        title:'HTML<span class="point-red">5</span>',
+        skill:[
+          '웹접근성',
+          '시맨틱 마크업',
+          'JSX'
+        ],
+        list:[
+          '시맨틱 마크업 <strong>숙달</strong>',
+          '삼성 프로젝트 웹 접근성 검수 통과 <strong>경험</strong>',
+          'React의 JSX 문법 <strong>학습</strong>',
+          'Haml,pug,jade 문법 <strong>학습</strong>'
+        ]
+      },
+      {
+        name:'css',
+        title:'<span class="point-red">C</span>SS',
+        skill:[
+          'Flex',
+          'AnimateFrame',
+          'Media query'
+        ],
+        list:[
+          'CSS Media query를 이용한 반응형 <strong>숙달</strong>',
+          'CSS3 Transition,Animation Frame을 이용한 Motion <strong>숙달</strong>',
+          'Flex를 이용한 레이아웃 배치 경험',
+          'Cross Browsing <strong>숙달</strong>'
+        ]
+      },
+      {
+        name:'js',
+        title:'<span class="point-red">J</span>S',
+        skill:[
+          'ES6',
+          'React',
+          'Vanilla'
+        ],
+        list:[
+          'React, React Native <strong>학습</strong>',
+          'ES6 - Class, ArrowFunction, Promise 사용 <strong>경험</strong>',
+          'OOP와 functional Programing <strong>학습</strong>',
+          'jQuery Plugin 제작 <strong>경험</strong>',
+          'Vanilla Javascript 꾸준한 <strong>학습</strong>'
+        ]
+      },
+      {
+        name:'etc',
+        title:'E<span class="point-red">t</span>c',
+        skill:[
+          'GIT',
+          'Mac',
+          'VScode'
+        ],
+        list:[
+          `GIT - Brunch, Merge, PullRequest <strong>경험</strong>`,
+          'Mac OS, Window OS <strong>숙달</strong>',
+          'VScode, Atom, Sublime 등 다양한 에디터 사용 <strong>경험</strong>',
+        ]
+      }
+    ]
     return (
       <div className="page skill">
         <div className="skill-wrap">
+          <header>
+            <h2 className="page-title en">I <span className="point-red">HAVE</span> THE <span className="point-red">SKILL</span></h2>
+            <p className="txt">학습하여 개인프로젝트에만 사용한것은 <strong className="point-red">'학습'</strong>으로,<br></br> 실무 사용경험이 있는것은 <strong className="point-red">'경험'</strong>으로,<br></br> 실무에서 자주 사용하여 숙달된것은 <strong className="point-red">'숙달'</strong>로 표시</p>
+          </header>
           <div className="inner">
-            <SkillBox boxName={skillHtml.name} title={skillHtml.title} skill={skillHtml.skill} skillList={skillHtml.list}/>
-            <SkillBox boxName={skillCss.name} title={skillCss.title} skill={skillCss.skill} skillList={skillCss.list}/>
-            <SkillBox boxName={skillJs.name} title={skillJs.title} skill={skillJs.skill} skillList={skillJs.list}/>
-            <SkillBox boxName={skillEtc.name} title={skillEtc.title} skill={skillEtc.skill} skillList={skillEtc.list}/>
-            
+            {skillList.map((item,index) => {
+              return <SkillBox key={index} boxName={item.name} title={item.title} skill={item.skill} skillList={item.list}/>
+            })}
           </div>
         </div>
       </div>

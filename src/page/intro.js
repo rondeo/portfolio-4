@@ -7,9 +7,9 @@ export default class Intro extends React.Component {
             <div className="inside">
               <div className="text-box">
                 <p className="page-txt">
-                  HELLO! I AM <span className="point">HYUNJUN</span>
+                  HELLO! I AM <span className="point-yello">HYUNJUN</span>
                 </p>
-                <h2 className="page-tit en">I'M A <span className="point">FRONT-END</span> DEVELOPER</h2>
+                <h2 className="page-tit en">I'M A <span className="point-yello">FRONT-END</span> DEVELOPER</h2>
                 <ul className="profile-list">
                   <li><span className="tit">성별</span><span className="txt">남자</span></li>
                   <li><span className="tit">나이</span><span className="txt">31(1989년생)</span></li>

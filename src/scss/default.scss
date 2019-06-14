@@ -25,7 +25,9 @@ img { border: 0; max-width: 100%; }
 
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
-$point:#FED205;
+$point-yello:#FED205;
+$point-red:#D13A28;
+$point:#000;
 /*page */
 .wrap {overflow-y:scroll;height:100vh;position: relative;}
 #header {position: fixed; top:0; left:0; width: 100%; z-index:10;
@@ -36,14 +38,14 @@ $point:#FED205;
     ul {position: absolute; right:0; top:20px;
         li {display: inline-block; font-size: 14px; margin-left: 15px;
             a {color: #fff;
-                &:hover {text-decoration: none; color: $point;}
+                &:hover {text-decoration: none; color: $point-yello;}
             }
         }
     }
 }
 #nav {position: fixed; right:40px; top:50%; transform:translateY(-50%);
     li { margin-bottom: 10px;
-        a {text-indent:-9999px; width:10px; height:10px; display: block; border-radius:50%; border: 1px solid $point;}
+        a {text-indent:-9999px; width:10px; height:10px; display: block; border-radius:50%; border: 1px solid $point-yello;}
     }
 }
 .page {min-height:100vh;
@@ -56,7 +58,7 @@ $point:#FED205;
         .profile-list {
             li {color: #fff; font-size: 18px; margin-bottom: 15px;
                 span.tit {color:#fff; position: relative;  padding-left: 10px;
-                    &:before {content:""; width: 4px; height:4px;display: inline-block; border-radius:50%; background: $point;  position: absolute; top:50%; left:0; transform:translateY(-50%);}
+                    &:before {content:""; width: 4px; height:4px;display: inline-block; border-radius:50%; background: $point-yello;  position: absolute; top:50%; left:0; transform:translateY(-50%);}
                     &:after {content:":";color:#fff; display: inline-block; margin:0 5px;}
                 }
                 span.txt {}
@@ -64,24 +66,47 @@ $point:#FED205;
         }
     }
     &.skill {
-        .skill-wrap { max-width:1200px; margin:0 auto; display: flex;
-            -webkit-box-align:center; min-height:100vh;align-items:center;
+        
+        .skill-wrap { max-width:1300px; margin:0 auto; display: flex;-webkit-box-align:center; min-height:100vh;align-items:center; flex-wrap:wrap; padding:50px;box-sizing: border-box;
+            header {text-align: center; width: 100%; margin-bottom: 30px;
+                h2.page-title {color: #fff; font-size: 60px;font-weight: bold; margin-bottom: 15px;}
+                p.txt {color: #fff; font-size: 20px; line-height: 28px;}
+            }
             .inner {display: flex;  }
             .box {background:#fff; flex:1; margin-left: 20px;  padding:25px;box-sizing: border-box; flex:1;  margin-bottom: 20px;
                 &:first-child {margin-left: 0;}
                 .tit {position: relative; text-align: center; font-size: 56px;display: block; margin-bottom: 25px; padding-bottom: 25px;
-                    &:after {content:"";position: absolute; bottom:0; width: 60px; height:2px; background: $point; left:50%; transform:translateX(-50%);}
+                    &:after {content:"";position: absolute; bottom:0; width: 60px; height:2px; background: $point-red; left:50%; transform:translateX(-50%);}
                 }
                 p.skill-para {text-align: center; font-size: 18px; margin-bottom: 20px; line-height: 25px;}
                 li {font-size: 14px; margin-top: 10px; position: relative; padding-left: 10px; line-height: 20px;word-break:keep-all;
                     &:first-child {margin-top: 0;}
-                    &:before {content:""; position: absolute; top:10px; left:0; width:4px; height:4px; border-radius: 50%; background: $point; display: inline-block; }
+                    &:before {content:""; position: absolute; top:10px; left:0; width:4px; height:4px; border-radius: 50%; background: $point-yello; display: inline-block; }
                 }
             }
         
         }
     }
-    
+    &.portfolio {
+        $point:#fff;
+        .inner {max-width:1200px; margin:0 auto; column-count:3; 
+            column-gap:20px; 
+            .portfolio-box {background: #fff; border-radius:8px; overflow:hidden; margin-bottom: 20px;-webkit-column-break-inside: avoid;-moz-column-break-inside: avoid;column-break-inside: avoid;
+                .portfolio-box-inner {padding:15px;}
+                .image {max-width:100%; text-align: center; 
+                    a {} 
+                }
+                .title {font-size: 25px; margin-bottom: 15px;display: block;}
+                .list {}
+                li {font-size: 14px; margin-bottom: 10px; display:table; line-height: 20px;}
+                .list-title {display:table-cell; width:60px;font-weight: bold;}
+                .list-para {display:table-cell;
+                    a {color: #D65DB1;}
+                }
+            }
+        }
+    }
 } 
-.point {color: $point;}
+.point-yello {color: $point-yello;}
+.point-red {color: $point-red;}
 .en {font-family: 'PT Sans', sans-serif;}
