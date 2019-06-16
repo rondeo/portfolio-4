@@ -6,6 +6,7 @@ import Header from './page/header';
 import Intro from './page/intro';
 import Skill from './page/skill';
 import Porfolio from './page/portfolio';
+import Contact from './page/contact';
 import Store from './store/store';
 import Nav from './page/nav';
 
@@ -20,6 +21,7 @@ class App extends React.Component {
               <Intro />
               <Skill />
               <Porfolio />
+              <Contact />
               <Nav />
           </div>
         </Provider>

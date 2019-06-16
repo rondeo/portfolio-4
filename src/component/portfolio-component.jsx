@@ -7,7 +7,7 @@ export default class PortfolioBox extends React.Component {
     return (
       <div className="portfolio-box">
         <div className="image">
-          <a href={link}><img src={imageUrl} alt={title}/></a>
+          <a href={link} target="_blank"><img src={imageUrl} alt={title}/></a>
         </div>
         <div className="portfolio-box-inner">
           <strong className="title">{title}</strong>

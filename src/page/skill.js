@@ -1,5 +1,6 @@
 import React from "react";
 import SkillBox from "../component/skill-component";
+import PageHeader from "../component/page-header";
 export default class Header extends React.Component {
   render() {
     const skillList = [
@@ -64,13 +65,12 @@ export default class Header extends React.Component {
         ]
       }
     ]
+    const title = 'I <span class="point-red">HAVE</span> THE <span class="point-red">SKILL</span>';
+    const text = [`학습하여 개인프로젝트에만 사용한것은 <strong class="point-red">'학습'</strong>으로`,`실무 사용경험이 있는것은 <strong class="point-red">'경험'</strong>으로`,`실무에서 자주 사용하여 숙달된것은 <strong class="point-red">'숙달'</strong>로 표시`];
     return (
       <div className="page skill">
+        <PageHeader color="red" headTitle={title} headTxt={text}/>
         <div className="skill-wrap">
-          <header>
-            <h2 className="page-title en">I <span className="point-red">HAVE</span> THE <span className="point-red">SKILL</span></h2>
-            <p className="txt">학습하여 개인프로젝트에만 사용한것은 <strong className="point-red">'학습'</strong>으로,<br></br> 실무 사용경험이 있는것은 <strong className="point-red">'경험'</strong>으로,<br></br> 실무에서 자주 사용하여 숙달된것은 <strong className="point-red">'숙달'</strong>로 표시</p>
-          </header>
           <div className="inner">
             {skillList.map((item,index) => {
               return <SkillBox key={index} boxName={item.name} title={item.title} skill={item.skill} skillList={item.list}/>

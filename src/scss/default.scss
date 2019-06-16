@@ -7,8 +7,7 @@ font: inherit;
 vertical-align: baseline;
 outline: none;
 }
-body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; }
-body {font-family: 'Noto Sans KR', sans-serif;position:fixed; top:0; left:0; width: 100%; height:100%;background: #222;}
+body {font-family: 'Noto Sans KR', sans-serif;position:fixed; top:0; left:0; width: 100%; height:100%;background: #222; font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; color: #333;}
 
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
@@ -27,7 +26,8 @@ a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 $point-yello:#FED205;
 $point-red:#D13A28;
-$point:#000;
+$point-blue:#2B88E0;
+$point-purple:#845EC2;
 /*page */
 .wrap {overflow-y:scroll;height:100vh;position: relative;}
 #header {position: fixed; top:0; left:0; width: 100%; z-index:10;
@@ -50,6 +50,15 @@ $point:#000;
 }
 .page {min-height:100vh;
     .inside {position: relative; z-index:2; min-height:100vh; max-width:1200px; margin:0 auto;}
+    header {text-align: center; width: 100%; margin-bottom: 100px;
+        h2.page-title {position: relative;color: #fff; font-size: 60px;font-weight: bold; margin-bottom: 40px; padding-bottom:20px; display: inline-block;
+            &:after {content:"";position: absolute; bottom:0; width: 33.33%; height:3px; left:50%; transform:translateX(-50%);}
+            &.red:after {background:$point-red;}
+            &.blue:after {background:$point-blue;}
+            &.purple:after {background:$point-purple;}
+        }
+        p.txt {color: #fff; font-size: 20px; line-height: 28px;}
+    }
     &.intro {background:url(../images/bg_intro.jpg); background-size:cover;
         .text-box {position: absolute; top:50%; transform:translateY(-50%); width: 100%;}
         .page-tit {color: #fff; font-size: 70px;font-weight: bold; margin-bottom: 50px; letter-spacing: 1px;}
@@ -65,14 +74,9 @@ $point:#000;
             }
         }
     }
-    &.skill {
-        
-        .skill-wrap { max-width:1300px; margin:0 auto; display: flex;-webkit-box-align:center; min-height:100vh;align-items:center; flex-wrap:wrap; padding:50px;box-sizing: border-box;
-            header {text-align: center; width: 100%; margin-bottom: 30px;
-                h2.page-title {color: #fff; font-size: 60px;font-weight: bold; margin-bottom: 15px;}
-                p.txt {color: #fff; font-size: 20px; line-height: 28px;}
-            }
-            .inner {display: flex;  }
+    &.skill {padding-top:100px;
+        .skill-wrap { max-width:1200px; margin:0 auto; display: flex;-webkit-box-align:center; align-items:center; flex-wrap:wrap;box-sizing: border-box;
+            .inner {display: flex;}
             .box {background:#fff; flex:1; margin-left: 20px;  padding:25px;box-sizing: border-box; flex:1;  margin-bottom: 20px;
                 &:first-child {margin-left: 0;}
                 .tit {position: relative; text-align: center; font-size: 56px;display: block; margin-bottom: 25px; padding-bottom: 25px;
@@ -87,26 +91,35 @@ $point:#000;
         
         }
     }
-    &.portfolio {
-        $point:#fff;
-        .inner {max-width:1200px; margin:0 auto; column-count:3; 
+    &.portfolio {padding:40px 0; box-sizing: border-box;
+        .portfolio-wrap {max-width:1200px; margin:0 auto; column-count:3; 
             column-gap:20px; 
             .portfolio-box {background: #fff; border-radius:8px; overflow:hidden; margin-bottom: 20px;-webkit-column-break-inside: avoid;-moz-column-break-inside: avoid;column-break-inside: avoid;
                 .portfolio-box-inner {padding:15px;}
                 .image {max-width:100%; text-align: center; 
                     a {} 
                 }
-                .title {font-size: 25px; margin-bottom: 15px;display: block;}
+                .title {font-size: 25px; margin-bottom: 15px;display: block;color: #00286F;}
                 .list {}
                 li {font-size: 14px; margin-bottom: 10px; display:table; line-height: 20px;}
                 .list-title {display:table-cell; width:60px;font-weight: bold;}
                 .list-para {display:table-cell;
-                    a {color: #D65DB1;}
+                    a {color: $point-blue;}
                 }
             }
         }
+        .call-api-btn {text-align: center; 
+            a {background: $point-blue; color: #fff; font-size: 20px; padding:15px; display: inline-block; 
+             &:hover {text-decoration: none;}
+            }
+        }
+    }
+    &.contact { padding-top: 100px;
+
     }
 } 
 .point-yello {color: $point-yello;}
 .point-red {color: $point-red;}
+.point-blue {color: $point-blue;}
+.point-purple {color:$point-purple;}
 .en {font-family: 'PT Sans', sans-serif;}
