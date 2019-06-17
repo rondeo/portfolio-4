@@ -1,41 +1,72 @@
-import React from "react";
 import { observable, action } from 'mobx';
-
 export default class Store {
    menu = ['INTRO','SKILL','PORTFOLIO','CONTACT'];
    url = 'https://kimik-portfolio.herokuapp.com'
-   portfolioLength = 6;
+   portfolioLength = 3;
+   dataArray = [];
+   pageNum = 0;
+   lastScrollTop = 0;
+   offsetArray = [];
    @observable dataMaxStatus = false;
    @observable portfolioList = null;
-   @observable pageNum = 0;
+   
    @action callPortfolioApi = () => {
       this.pageNum ++;
-      const that = this;
-      const callData = () => {
-         return new Promise(function (resolve, reject) {
-            fetch(that.url+`/Portfolios?_start=0&_limit=${that.pageNum*that.portfolioLength}`).then((res) => {
-               res.json().then(data => {
-                  resolve(data)
+      fetch(this.url+`/Portfolios?_start=${(this.pageNum-1)*this.portfolioLength}&_limit=${this.pageNum*(this.portfolioLength+1)}`).then((res) => {
+            res.json().then(data => {
+               data.map((item,index)=>{
+                  if(!(index == this.portfolioLength))
+                  this.dataArray.push(item)
                })
+               this.portfolioList = this.dataArray;
+               if(data.length < this.portfolioLength+1){
+                  alert("마지막 페이지 입니다.")
+                  this.dataMaxStatus = true
+               }
             })
-         });
-      }
-      const callCount = () => {
-         return new Promise(function (resolve, reject) {
-            fetch(that.url+`/Portfolios/count`).then((res) => {
-               res.text().then(data => {
-                  resolve(data)
-               })
-            })
-         });
-      }
-      Promise.all([callData(), callCount()]).then(function(values) {
-         if(values[1] > that.pageNum*that.portfolioLength){
-            that.portfolioList = values[0];
-         }else{
-            that.dataMaxStatus = true
-            that.portfolioList = values[0];
-         }
-      });
+      })
    }
+   pageMove(e) {
+      e.preventDefault();
+      let box = document.querySelector(".wrap");
+      function easeInOutCubic(t, b, c, d) {
+         if ((t /= d / 2) < 1) {
+           return c / 2 * t * t * t + b;
+         }
+         return c / 2 * ((t -= 2) * t * t + 2) + b;
+       }
+      function PageScroll(scrollable, distance, duration) {
+
+         var startTime;
+         var startPos = scrollable.scrollTop;
+         var maxScroll = scrollable.scrollHeight - scrollable.offsetHeight;
+         var scrollEndValue = startPos + distance < maxScroll ? distance : maxScroll - startPos;
+       
+         function scroll(timestamp) {
+           startTime = startTime || timestamp;
+           var elapsed = timestamp - startTime;
+           var progress = easeInOutCubic(elapsed, startPos, scrollEndValue, duration);
+           scrollable.scrollTop = progress;
+       
+           if (elapsed < duration) {
+             requestAnimationFrame(scroll);
+           }
+         }
+         requestAnimationFrame(scroll);
+      }
+      PageScroll(box,document.querySelector(e.target.getAttribute("href")).offsetTop-box.scrollTop,600);
+   }
+   pageLoad = () => {
+      document.querySelectorAll(".page").forEach((el)=>{
+         this.offsetArray.push(el.offsetTop-50)
+      })
+   }
+   pageScroll =(e) => {
+      // this.offsetArray.map((top,i) => {
+      //    if(st >= this.offsetArray[i] && st <= this.offsetArray[i+1]){
+
+      //    }
+      // })
+   }
+
 }

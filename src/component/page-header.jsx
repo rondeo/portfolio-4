@@ -10,7 +10,6 @@ export default class PageHeader extends React.Component {
         {headTxt ? headTxt.map((item,index) => {
           return <p key={index} className="txt">{ReactHtmlParser(item)}</p>
         }) : false}
-        <p className="txt"></p>
       </header>
     )
   }

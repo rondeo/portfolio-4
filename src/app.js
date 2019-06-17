@@ -10,7 +10,7 @@ import Contact from './page/contact';
 import Store from './store/store';
 import Nav from './page/nav';
 
-const store = new Store(); // 스토어 인스턴스를 만들고
+const store = new Store(); 
 class App extends React.Component {
   
   render() {
@@ -22,7 +22,6 @@ class App extends React.Component {
               <Skill />
               <Porfolio />
               <Contact />
-              <Nav />
           </div>
         </Provider>
         

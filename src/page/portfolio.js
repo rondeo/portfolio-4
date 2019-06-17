@@ -11,7 +11,7 @@ export default class Portfolio extends React.Component {
   }
   render() {
     const {store} = this.props;
-    let data = store.portfolioList;
+    const data = store.portfolioList;
     let portfolioEl = null;
     if(data){
       portfolioEl = data.map((item) => {
@@ -27,7 +27,7 @@ export default class Portfolio extends React.Component {
     const title = 'I <span class="point-blue">WOR</span>KED <span class="point-blue">PROJECT</span>';
     const text = ['<strong class="point-blue">2014.01</strong>부터 <strong class="point-blue">2019.04</strong> 까지 진행했던 <strong class="point-blue">주요 프로젝트 목록</strong>입니다.'];
     return (
-      <div className="page portfolio">
+      <div className="page portfolio" id="portfolio">
         <PageHeader color="blue" headTitle={title} headTxt={text}/>
         <div className="portfolio-wrap">
           {portfolioEl}
