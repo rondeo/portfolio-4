@@ -124,7 +124,7 @@ $com-padding:100px;
             ul {display: flex;}
             li {flex:1; padding:30px 30px 50px; border-left:1px solid $point-purple;position: relative;
                 strong {display: block; color:#fff;font-size: 18px; margin-bottom: 15px;}
-                p {color: #fff; font-size: 32px; font-weight: bold; min-height:150px; line-height: 45px; word-break:keep-all;}
+                p {color: #fff; font-size: 32px; font-weight: bold; min-height:150px; line-height: 45px;}
                 a {position: absolute; bottom:0; left:50%; transform:translateX(-50%);display: inline-block; background: $point-purple; padding:15px; font-size: 15px; color: #fff;
                     &:hover {text-decoration: none;}
                 }
@@ -191,6 +191,7 @@ $com-padding:100px;
     .page.skill .skill-wrap .box {width: 100%;flex:none;margin-left: 0%;}
     .page.portfolio .portfolio-wrap {column-count:1;}
     .page.portfolio .portfolio-wrap .portfolio-box .image img {width: 100%;}
+    .page.contact .contact-wrap li p {word-break:keep-all;}
     
 
 }
