@@ -66,7 +66,7 @@ export default class Header extends React.Component {
   ]
   render() {
     const title = 'I <span class="point-red">HAVE</span> THE <span class="point-red">SKILL</span>';
-    const text = [`학습하여 개인프로젝트에만 사용한것은 <strong class="point-red">'학습'</strong>으로`,`실무 사용경험이 있는것은 <strong class="point-red">'경험'</strong>으로`,`실무에서 자주 사용하여 숙달된것은 <strong class="point-red">'숙달'</strong>로 표시`];
+    const text = [`학습하여 개인프로젝트에만 사용한것은 <strong class="point-red">'학습'</strong>으로,`,`실무 사용경험이 있는것은 <strong class="point-red">'경험'</strong>으로,`,`실무에서 자주 사용하여 숙달된것은 <strong class="point-red">'숙달'</strong>로 표시.`];
     return (
       <div className="page skill" id="skill">
         <PageHeader color="red" headTitle={title} headTxt={text}/>

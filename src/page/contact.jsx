@@ -22,7 +22,7 @@ export default class Contact extends React.Component {
             </li>
             <li>
               <strong><span className="point-purple">E</span>MA<span className="point-purple">IL</span></strong>
-              <p>khyun<span className="point-purple">jun2</span>@<span className="point-purple">gmail</span>.com</p>
+              <p>khyun<span className="point-purple">jun2</span> @ <span className="point-purple">gmail</span>.com</p>
               <a href="mailto:khyunjun2@gmail.com">SEND</a>
             </li>
           </ul>
