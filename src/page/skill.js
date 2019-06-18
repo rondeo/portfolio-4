@@ -29,7 +29,7 @@ export default class Header extends React.Component {
       list:[
         'CSS Media query를 이용한 반응형 <strong>숙달</strong>',
         'CSS3 Transition,Animation Frame을 이용한 Motion <strong>숙달</strong>',
-        'Flex를 이용한 레이아웃 배치 경험',
+        'Flex를 이용한 레이아웃 배치 <strong>경험</strong>',
         'Cross Browsing <strong>숙달</strong>'
       ]
     },

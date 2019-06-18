@@ -1,6 +1,6 @@
 # PORTFOLIO
 ## 사용기술
-1. 프론트 : React + Mobx
+1. 프론트 : React + Mobx4 + Firebase
 2. 백엔드 : Node.js + Strapi + Heroku (https://kimik-portfolio.herokuapp.com/) 
 
 ## SITE
