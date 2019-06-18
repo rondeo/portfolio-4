@@ -30,7 +30,7 @@ $point-blue:#2B88E0;
 $point-purple:#845EC2;
 $com-padding:100px;
 /*page */
-.wrap {overflow-y:scroll;overflow-x:hidden;height:100vh;position: relative;}
+.wrap {overflow-y:scroll;overflow-x:hidden;height:100vh;position: relative; -webkit-overflow-scrolling: touch;}
 #header {position: fixed; top:0; left:0; width: calc(100% - 17px); z-index:10;height:57px;background: #222;
     .inside {max-width:1200px; margin:0 auto; position: relative; padding:0 $com-padding;}
     h1.logo {position: absolute; top:15px; left:$com-padding; color: #fff; font-size: 30px;font-weight: bold;
