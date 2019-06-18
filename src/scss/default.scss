@@ -74,13 +74,12 @@ $com-padding:100px;
                     &:before {content:""; width: 4px; height:4px;display: inline-block; border-radius:50%; background: $point-yello;  position: absolute; top:50%; left:0; transform:translateY(-50%);}
                     &:after {content:":";color:#fff; display: inline-block; margin:0 5px;}
                 }
-                span.txt {}
                 a {color: $point-yello;}
             }
         }
     }
     &.skill {padding-top:100px;
-        .skill-wrap { max-width:1200px; margin:0 auto; display: flex;-webkit-box-align:center; align-items:center; flex-wrap:wrap; 
+        .skill-wrap { max-width:1200px; margin:0 auto; 
             .inner {display: flex;}
             .box {background:#fff; flex:1; margin-left: 20px;  padding:25px;box-sizing: border-box; flex:1;  margin-bottom: 20px;
                 &:first-child {margin-left: 0;}

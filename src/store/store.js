@@ -5,8 +5,6 @@ export default class Store {
    portfolioLength = 3;
    dataArray = [];
    pageNum = 0;
-   lastScrollTop = 0;
-   offsetArray = [];
    @observable dataMaxStatus = false;
    @observable portfolioList = null;
    
@@ -23,6 +21,7 @@ export default class Store {
                   alert("마지막 페이지 입니다.")
                   this.dataMaxStatus = true
                }
+               
             })
       })
    }
@@ -57,9 +56,9 @@ export default class Store {
       PageScroll(box,document.querySelector(e.target.getAttribute("href")).offsetTop-box.scrollTop,600);
    }
    pageLoad = () => {
-      document.querySelectorAll(".page").forEach((el)=>{
-         this.offsetArray.push(el.offsetTop-50)
-      })
+      // document.querySelectorAll(".page").forEach((el)=>{
+      //    this.offsetArray.push(el.offsetTop-50)
+      // })
    }
    pageScroll =(e) => {
       // this.offsetArray.map((top,i) => {

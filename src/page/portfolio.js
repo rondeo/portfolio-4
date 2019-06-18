@@ -12,6 +12,7 @@ export default class Portfolio extends React.Component {
   render() {
     const {store} = this.props;
     const data = store.portfolioList;
+    
     let portfolioEl = null;
     if(data){
       portfolioEl = data.map((item) => {
