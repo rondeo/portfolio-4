@@ -120,8 +120,8 @@ $com-padding:100px;
     }
     &.contact { padding-top: 100px; height:100vh; box-sizing: border-box; min-height:inherit;
         .contact-wrap {margin:0 auto;text-align: center; max-width:1200px;
-            ul {display: flex;}
-            li {flex:1; padding:30px 30px 50px; border-left:1px solid $point-purple;position: relative;
+            .contact-list {display: flex;}
+            .box{flex:1; padding:30px 30px 50px; border-left:1px solid $point-purple;position: relative;
                 strong {display: block; color:#fff;font-size: 18px; margin-bottom: 15px;}
                 p {color: #fff; font-size: 32px; font-weight: bold; min-height:150px; line-height: 45px;}
                 a {position: absolute; bottom:0; left:50%; transform:translateX(-50%);display: inline-block; background: $point-purple; padding:15px; font-size: 15px; color: #fff;
@@ -156,11 +156,11 @@ $com-padding:100px;
     .page.skill .skill-wrap .box:first-child {margin-left: 2%;}
     .page.skill .skill-wrap .box {width: 48%;flex:none;margin-left: 2%;}
     .page.portfolio .portfolio-wrap {column-count:2;}
-    .page.contact .contact-wrap ul {display: block; padding-bottom: 100px;}
-    .page.contact .contact-wrap ul li {display: block;flex:none; border-left: 0; margin-top: 40px; border-top: 1px solid $point-purple;
+    .page.contact .contact-wrap .contact-list {display: block; padding-bottom: 100px;}
+    .page.contact .contact-wrap .box {display: block;flex:none; border-left: 0; margin-top: 40px; border-top: 1px solid $point-purple;
         &:first-child {margin-top: 0;border-top: 0;}
     }
-    .page.contact .contact-wrap li p {min-height:inherit; margin-bottom:40px;}
+    .page.contact .contact-wrap .box p {min-height:inherit; margin-bottom:40px;}
 
 }
 @media screen and (max-width: 768px) {
